@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronyzo - Official Download</title>
+    <style>
+        /* Modern & Clean Design */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            border-radius: 22px;
+            object-fit: contain;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0 0 10px;
+            color: #2d3436;
+            font-size: 24px;
+        }
+        
+        p {
+            color: #636e72;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .download-btn {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+        }
+        
+        .download-btn:hover {
+            background: #5649c0;
+            transform: translateY(-2px);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .file-info {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #b2bec3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Replace "icon.png" with your app icon file -->
+        <img src="icon.png" alt="Cronyzo Icon" class="app-icon">
+        
+        <h1>Cronyzo App</h1>
+        <p>Download the latest version for Android.</p>
+        
+        <button class="download-btn" id="downloadBtn">
+            Download Now (v1.0.0)
+        </button>
+        
+        <div class="file-info">
+            File: Cronyzo.apk (15 MB)
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            // Replace "Cronyzo.apk" with your APK filename
+            const apkFile = "Cronyzo.apk";
+            
+            // Create a temporary download link
+            const downloadLink = document.createElement("a");
+            downloadLink.href = apkFile;
+            downloadLink.download = apkFile;  // Forces download
+            
+            // Trigger the download
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            
+            // Optional: Log download event
+            console.log("Download started: " + apkFile);
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronyzo - Official Download</title>
+    <style>
+        /* Modern & Clean Design */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            border-radius: 22px;
+            object-fit: contain;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0 0 10px;
+            color: #2d3436;
+            font-size: 24px;
+        }
+        
+        p {
+            color: #636e72;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .download-btn {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+        }
+        
+        .download-btn:hover {
+            background: #5649c0;
+            transform: translateY(-2px);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .file-info {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #b2bec3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Replace "icon.png" with your app icon file -->
+        <img src="icon.png" alt="Cronyzo Icon" class="app-icon">
+        
+        <h1>Cronyzo App</h1>
+        <p>Download the latest version for Android.</p>
+        
+        <button class="download-btn" id="downloadBtn">
+            Download Now (v1.0.0)
+        </button>
+        
+        <div class="file-info">
+            File: Cronyzo.apk (15 MB)
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            // Replace "Cronyzo.apk" with your APK filename
+            const apkFile = "Cronyzo.apk";
+            
+            // Create a temporary download link
+            const downloadLink = document.createElement("a");
+            downloadLink.href = apkFile;
+            downloadLink.download = apkFile;  // Forces download
+            
+            // Trigger the download
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            
+            // Optional: Log download event
+            console.log("Download started: " + apkFile);
+        });
+    </script>
+</body>
+</html>
