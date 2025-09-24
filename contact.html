@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us - CRONYZO</title>
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#ffffff; --accent:#ff9900; --muted:#6b6f76;
+      --radius:12px; --maxw:1100px;
+      font-family:Inter, system-ui, Arial, sans-serif;
+    }
+    html,body{height:100%; margin:0; background:var(--bg); color:#111}
+    .wrap{max-width:var(--maxw); margin:28px auto; padding:20px;}
+    header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#222,#444);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    h1{font-size:20px;margin:0}
+    .grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+    @media(max-width:880px){ .grid{grid-template-columns:1fr} .side{order:2} }
+    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 6px 18px rgba(15,20,30,0.06)}
+    .muted{color:var(--muted); font-size:14px}
+    form .row{display:flex; gap:10px}
+    form .col{flex:1}
+    label{display:block;font-size:13px;margin-bottom:6px}
+    input[type="text"], input[type="email"], textarea, select{
+      width:100%; padding:10px 12px; border-radius:8px; border:1px solid #e6e8ee; font-size:14px; box-sizing:border-box;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .btn{background:var(--accent); color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer;font-weight:600}
+    .btn:disabled{opacity:.6; cursor:not-allowed}
+    .contact-list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+    .item{display:flex;gap:12px;align-items:flex-start}
+    .icon{width:44px;height:44;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-weight:700;color:#222}
+    .map-placeholder{height:220px;border-radius:10px;background:linear-gradient(90deg,#f1f5f9,#fff);display:flex;align-items:center;justify-content:center;color:var(--muted); font-weight:600}
+    .small{font-size:13px;color:var(--muted)}
+    .success{background:#e7f9ef;border:1px solid #b7eac7;padding:10px;border-radius:8px;color:#0a6b2f;margin-top:10px}
+    .error{background:#ffecec;border:1px solid #ffbcbc;padding:10px;border-radius:8px;color:#7a1a1a;margin-top:10px}
+    .socials{display:flex;gap:8px;margin-top:8px}
+    .chip{padding:6px 10px;background:#f3f4f6;border-radius:999px;font-weight:600}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo">CZ</div>
+      <div>
+        <h1>Contact CRONYZO</h1>
+        <div class="muted">Questions about orders, wholesale partnerships or deliveries? Reach out — we reply fast.</div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <!-- left: contact form -->
+      <div class="card">
+        <h2 style="margin-top:0">Get in touch</h2>
+        <p class="small">Fill the form and we'll respond within 24 hours.</p>
+
+        <form id="contactForm" style="margin-top:12px" novalidate>
+          <div class="row" style="margin-bottom:12px">
+            <div class="col">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="col">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="text" placeholder="+91 9xxxxxxxxx" required />
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </div>
+
+          <div style="margin-bottom:12px">
+            <label for="reason">Reason</label>
+            <select id="reason" name="reason" required>
+              <option value="">Choose</option>
+              <option>Order / Shipping</option>
+              <option>Wholesale Partnership</option>
+              <option>Payment / Refund</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom:12px">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" id="submitBtn" type="submit">Send message</button>
+            <div id="statusArea" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <div class="muted" style="margin-top:12px">
+          Tip: For order queries, include your <strong>Order ID</strong> and approximate date of purchase.
+        </div>
+      </div>
+
+      <!-- right: contact info -->
+      <aside class="side">
+        <div class="card">
+          <h3 style="margin-top:0">Contact details</h3>
+          <div class="contact-list">
+            <div class="item">
+              <div class="icon">P</div>
+              <div>
+                <div style="font-weight:700">Phone</div>
+                <div class="small">+91 76949 93234</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="icon">E</div>
+              <div>
+                <div style="font-weight:700">Email</div>
+                <div class="small"><a href="mailto:support@cronyzo.shop">support@cronyzo.shop</a></div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="icon">A</div>
+              <div>
+                <div style="font-weight:700">Address</div>
+                <div class="small">Registered: <br/>Home address (will update later to Delhi office)</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div style="font-weight:700">Working hours</div>
+            <div class="small">Mon–Sat: 10:00 — 18:00 IST</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div style="font-weight:700">Quick links</div>
+            <div class="socials">
+              <a class="chip" href="https://wa.me/917694993234" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="chip" href="mailto:support@cronyzo.shop">Email</a>
+              <a class="chip" href="/shipping.html">Shipping Policy</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">Find us / Map</h3>
+          <div class="map-placeholder">Map embed (replace with Google Maps iframe)</div>
+          <div class="small" style="margin-top:8px">Note: Office address will be added once Delhi office opens.</div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    // Simple client-side validation + mock submit
+    const form = document.getElementById('contactForm');
+    const statusArea = document.getElementById('statusArea');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function showMessage(type, text){
+      statusArea.innerHTML = '<div class="' + (type==='ok' ? 'success' : 'error') + '">' + text + '</div>';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      showMessage('info','Sending…');
+
+      const data = {
+        name: form.name.value.trim(),
+        phone: form.phone.value.trim(),
+        email: form.email.value.trim(),
+        reason: form.reason.value,
+        message: form.message.value.trim()
+      };
+
+      // Basic validation
+      if(!data.name || !data.phone || !data.email || !data.reason || !data.message){
+        showMessage('err','Please fill all required fields.');
+        submitBtn.disabled = false;
+        return;
+      }
+
+      // Replace this fetch URL with your real endpoint (Supabase function / API)
+      try {
+        // Mock delay
+        await new Promise(r => setTimeout(r, 900));
+        // If you use real API:
+        // const res = await fetch('/api/contact', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(data)});
+        // const json = await res.json(); handle json
+
+        // Mock success
+        form.reset();
+        showMessage('ok', 'Thanks! Your message has been received. We will contact you within 24 hours.');
+      } catch (err) {
+        showMessage('err','Something went wrong. Try again later.');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

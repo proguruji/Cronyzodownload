@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipping Policy - CRONYZO</title>
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#fff; --accent:#ff9900; --muted:#6b6f76; --radius:12px; --maxw:1100px;
+    }
+    body{margin:0;background:var(--bg);font-family:Inter, Arial, sans-serif;color:#111}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px}
+    header{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44;border-radius:8px;background:linear-gradient(135deg,#222,#444);display:flex;align-items:center;justify-content:center;color:#fff}
+    h1{margin:0;font-size:20px}
+    .muted{color:var(--muted)}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,20,30,0.06);margin-top:14px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}}
+    .faq .q{font-weight:700;margin-top:12px}
+    .accordion{border-radius:8px;overflow:hidden;border:1px solid #eef2f6}
+    .acc-item{border-bottom:1px solid #eef2f6}
+    .acc-item button{width:100%;padding:12px;text-align:left;background:transparent;border:0;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+    .acc-body{padding:12px;border-top:1px solid #f6f7f9;background:#fff;display:none}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3f4f6}
+    .track-box{display:flex;gap:8px}
+    input[type="text"]{padding:10px;border-radius:8px;border:1px solid #e6e8ee;flex:1}
+    .btn{background:var(--accent);color:#fff;border:0;padding:10px 12px;border-radius:8px;cursor:pointer}
+    .muted-sm{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo">CZ</div>
+      <div>
+        <h1>Shipping & Delivery - CRONYZO</h1>
+        <div class="muted">Clear policy for wholesale orders, tracking and delivery OTP system.</div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div>
+        <div class="card">
+          <h2 style="margin-top:0">Our Shipping Promise</h2>
+          <p class="muted-sm">
+            Cronyzo handles shipment for all orders. Wholesalers do not dispatch directly — this ensures consistent tracking, verified OTP handovers and better buyer protection.
+          </p>
+
+          <ul style="margin-top:12px">
+            <li><strong>Processing time:</strong> 1–2 business days after order confirmation.</li>
+            <li><strong>Delivery time:</strong> Pan-India 3–10 business days depending on location.</li>
+            <li><strong>Courier partners:</strong> We use trusted partners and own local stores for last-mile handover.</li>
+            <li><strong>Shipping charges:</strong> Calculated at checkout by weight & zone.</li>
+            <li><strong>Cancellation:</strong> Orders can be cancelled within 24 hours. After that, contact support.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin-top:0">OTP Delivery Flow</h3>
+          <ol style="margin-top:8px">
+            <li>Wholesaler hands package to Cronyzo shipper — Shipper confirms pickup with <strong>OTP-WH</strong>.</li>
+            <li>Item arrives at local store near buyer — Store manager confirms intake with OTP.</li>
+            <li>Delivery boy delivers to buyer — Buyer confirms delivery with final OTP (only final OTP fully visible).</li>
+          </ol>
+          <p class="muted-sm">All intermediate OTPs are masked in user UI except final delivery OTP for security.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin-top:0">Returns & Damages</h3>
+          <p class="muted-sm">Defective items can be returned within 7 days. Contact support with order ID and photos. Return pickup will be arranged by Cronyzo.</p>
+        </div>
+
+        <div class="card faq" style="margin-top:14px">
+          <h3 style="margin-top:0">Shipping FAQs</h3>
+          <div class="accordion" id="faq">
+            <div class="acc-item">
+              <button type="button">How are shipping charges calculated? <span class="muted">+</span></button>
+              <div class="acc-body">Charges depend on weight, dimensions and destination zone. For wholesale bulk orders, negotiated rates apply.</div>
+            </div>
+            <div class="acc-item">
+              <button type="button">Can a wholesaler use their own courier? <span class="muted">+</span></button>
+              <div class="acc-body">No — Cronyzo controls shipping to ensure standard tracking and buyer protection.</div>
+            </div>
+            <div class="acc-item">
+              <button type="button">What if the item is delayed? <span class="muted">+</span></button>
+              <div class="acc-body">Contact support with Order ID. We will update tracking and escalate with courier partner.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Track your order</h3>
+          <p class="muted-sm">Enter your Order Code (e.g. 45CFFF88)</p>
+          <div class="track-box" style="margin-top:8px">
+            <input id="trackInput" type="text" placeholder="Order code" />
+            <button id="trackBtn" class="btn">Track</button>
+          </div>
+          <div id="trackResult" style="margin-top:12px"></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">Shipping zones & sample charges</h3>
+          <div style="margin-top:8px">
+            <div><strong>Zone A (Local):</strong> ₹50 per kg</div>
+            <div><strong>Zone B (Within state):</strong> ₹80 per kg</div>
+            <div><strong>Zone C (Interstate):</strong> ₹120 per kg</div>
+            <div class="muted-sm" style="margin-top:8px">For bulk orders contact sales@cronyzo.shop for negotiated rates.</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">Quick links</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <a class="chip" href="/contact.html">Contact Support</a>
+            <a class="chip" href="/orders">Your Orders</a>
+            <a class="chip" href="/help">Help Center</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    // Accordion
+    document.querySelectorAll('.acc-item button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const body = btn.parentElement.querySelector('.acc-body');
+        const open = body.style.display === 'block';
+        document.querySelectorAll('.acc-body').forEach(b=>b.style.display='none');
+        document.querySelectorAll('.acc-item button span').forEach(s=>s.textContent='+');
+        if(!open){ body.style.display='block'; btn.querySelector('span').textContent='-'; }
+      });
+    });
+
+    // Mock tracking demo
+    const trackBtn = document.getElementById('trackBtn');
+    const trackInput = document.getElementById('trackInput');
+    const trackResult = document.getElementById('trackResult');
+
+    const mockDB = {
+      '45CFFF88': {
+        status:'Out for delivery',
+        last:'Shipper picked up (OTP-WH verified)',
+        eta:'Today, by 6:00 PM',
+        maskedOtp:'****68'
+      },
+      'ABC12345': {
+        status:'At local store',
+        last:'Arrived at near-store intake (OTP verified)',
+        eta:'2 business days',
+        maskedOtp:'****12'
+      }
+    };
+
+    trackBtn.addEventListener('click', ()=>{
+      const code = trackInput.value.trim().toUpperCase();
+      trackResult.innerHTML = '';
+      if(!code){ trackResult.innerHTML = '<div class="muted-sm" style="color:#a00">Enter order code</div>'; return; }
+      trackResult.innerHTML = '<div class="muted-sm">Checking…</div>';
+      setTimeout(()=>{
+        if(mockDB[code]){
+          const d = mockDB[code];
+          trackResult.innerHTML = `<div style="font-weight:700">${d.status}</div>
+            <div class="muted-sm">${d.last}</div>
+            <div style="margin-top:8px"><strong>ETA:</strong> ${d.eta}</div>
+            <div class="muted-sm" style="margin-top:8px">Final OTP (masked): <strong>${d.maskedOtp}</strong></div>`;
+        } else {
+          trackResult.innerHTML = '<div class="muted-sm">No tracking found. Contact support with your Order ID.</div>';
+        }
+      },700);
+    });
+  </script>
+</body>
+</html>
